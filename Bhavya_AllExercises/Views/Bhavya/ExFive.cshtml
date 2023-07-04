@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "ExFive";
+}
+
+<h2>ExFive</h2>
+@using (Html.BeginForm()) {
+    <div class="container">
+        <div class="form-group">
+            <label for="height">Height: </label>
+            <input type="text" id="height" name="heightValue" value="@ViewBag.height" placeholder="Enter Height" />
+        </div>
+        <div class="form-group">
+            <label for="width">Width: </label>
+            <input type="text" id="width" name="widthValue" value="@ViewBag.width" placeholder="Enter Width" />
+        </div>
+        <div class="form-group">
+            <input type="submit" name="applySize" class="btn btn-success" value="Set" />
+            <input type="submit" name="applySize" class="btn btn-danger" value="Reset" />
+        </div>
+    </div>
+}
+
+<div class="bg-success text-center" style="padding: 2%;">
+    <img src="https://avatars.githubusercontent.com/u/99157188?v=4" width="@ViewBag.width + 'px'" height="@ViewBag.height + 'px'" /><br /><br />
+    <p class="bg-primary" style="display: inline">@ViewBag.width X @ViewBag.height</p>
+</div>

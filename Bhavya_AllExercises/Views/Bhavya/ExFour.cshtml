@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "ExFour";
+}
+<div style="display:@ViewBag.Display">
+    <h2>ExFour</h2>
+
+    @using (Html.BeginForm("HideForm", "Bhavya", FormMethod.Post))
+    {
+
+        <input class="form-control" name="displayType" placeholder="Enter None" />
+        <input class="btn btn-success" type="submit" value="Submit" />
+
+    }
+</div>

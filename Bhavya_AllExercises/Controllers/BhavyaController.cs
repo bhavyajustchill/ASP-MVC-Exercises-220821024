@@ -32,5 +32,40 @@ namespace Bhavya_AllExercises.Controllers
             ViewBag.BgColor = colorValue;
             return View("ExThree");
         }
+
+        public ActionResult ExFour()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult HideForm(string displayType)
+        {
+            ViewBag.Display = displayType;
+            return View("ExFour");
+        }
+
+        public ActionResult ExFive()
+        {
+            string DefaultSize = "50";
+            ViewBag.height = DefaultSize;
+            ViewBag.width = DefaultSize;
+            if (Request.Params["applySize"] == "Set")
+            {
+                string height = Request.Params["heightValue"];
+                ViewBag.height = height;
+
+                string width = Request.Params["widthValue"];
+                ViewBag.width = width;
+            }
+            else if (Request.Params["applySize"] == "Reset")
+            {
+                ViewBag.height = DefaultSize;
+                ViewBag.width = DefaultSize;
+            }
+            return View();
+        }
+
+        
     }
 }
