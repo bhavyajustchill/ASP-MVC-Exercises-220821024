@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "ExThree";
+}
+
+
+<h2 style="background-color:@ViewBag.BgColor">Colour Changer</h2>
+
+
+@using (Html.BeginForm("ProcessForm", "Bhavya")) {
+<input class="form-control" name="colorValue" placeholder="Enter Colour Code" />
+<input type="submit" class="btn btn-primary" value="Change Colour" />
+}
