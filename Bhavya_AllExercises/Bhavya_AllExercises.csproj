@@ -168,6 +168,7 @@
     <Content Include="Views\Bhavya\ExThree.cshtml" />
     <Content Include="Views\Bhavya\ExFour.cshtml" />
     <Content Include="Views\Bhavya\ExFive.cshtml" />
+    <Content Include="Views\Bhavya\ExSix.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

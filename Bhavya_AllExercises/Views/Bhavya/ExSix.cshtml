@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "ExSix";
+}
+
+<h2>Generate Pattern</h2>
+
+@using (Html.BeginForm("GeneratePattern", "Bhavya", FormMethod.Post))
+{
+    <div class="container">
+        <div class="form-group">
+            <label for="height">Length: </label>
+            <input type="text" id="height" name="lengthValue" placeholder="Enter Length" />
+        </div>
+        <div class="form-group">
+            <input type="submit" name="applySize" class="btn btn-primary" value="Generate" />
+        </div>
+    </div>
+
+}
+
+@for (int i = 0; i <= ViewBag.Length; i++)
+{
+    for (int j = 0; j < i; j++)
+    {
+        <span>* </span>
+    }
+    <br />
+}
