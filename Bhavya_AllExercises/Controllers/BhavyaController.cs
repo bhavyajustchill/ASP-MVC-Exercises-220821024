@@ -68,12 +68,8 @@ namespace Bhavya_AllExercises.Controllers
 
         public ActionResult ExSix(string lengthValue)
         {
-
-
             ViewBag.Length = Convert.ToInt32(lengthValue);
             return View("ExSix");
         }
-
-      
     }
 }
