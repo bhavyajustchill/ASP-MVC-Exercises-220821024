@@ -1,11 +1,13 @@
 ﻿
 @{
     ViewBag.Title = "ExSix";
+    Random random = new Random();
+    string color = string.Format("#{0:X6}", random.Next(0x1000000));
 }
 
 <h2>Generate Pattern</h2>
 
-@using (Html.BeginForm("GeneratePattern", "Bhavya", FormMethod.Post))
+@using (Html.BeginForm())
 {
     <div class="container">
         <div class="form-group">
@@ -23,7 +25,8 @@
 {
     for (int j = 0; j < i; j++)
     {
-        <span>* </span>
+        <span style="color:@color">* </span>
+        color = string.Format("#{0:X6}", random.Next(0x1000000));
     }
     <br />
 }

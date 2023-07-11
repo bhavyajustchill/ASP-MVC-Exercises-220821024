@@ -66,16 +66,14 @@ namespace Bhavya_AllExercises.Controllers
             return View();
         }
 
-        public ActionResult ExSix()
+        public ActionResult ExSix(string lengthValue)
         {
-            return View();
-        }
 
-        [HttpPost]
-        public ActionResult GeneratePattern(string lengthValue)
-        {
+
             ViewBag.Length = Convert.ToInt32(lengthValue);
             return View("ExSix");
         }
+
+      
     }
 }
