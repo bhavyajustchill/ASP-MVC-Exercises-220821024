@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "ExSeven";
+
+}
+
+<h2>ExSeven</h2>
+
+<div>
+    @using (Html.BeginForm()) {
+    <div>
+        <button class="btn btn-primary">Create TextBox</button>
+    </div>
+    }
+
+<div>
+    @ViewBag.dynamicInputs.Length
+    @foreach (var inputId in ViewBag.dynamicInputs)
+        {
+            <input type="text" id="@inputId" name="@inputId" placeholder="@inputId" />
+        }
+</div>
+
+</div>

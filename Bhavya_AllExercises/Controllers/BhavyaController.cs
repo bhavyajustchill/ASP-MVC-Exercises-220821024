@@ -71,5 +71,24 @@ namespace Bhavya_AllExercises.Controllers
             ViewBag.Length = Convert.ToInt32(lengthValue);
             return View("ExSix");
         }
+
+
+        string[] dynamicInputs = new string[0];
+            
+    public ActionResult ExSeven()
+        {
+            dynamicInputs = ViewBag.dynamicInputs as string[];
+            Guid g = Guid.NewGuid();
+            string GuidString = g.ToString().ToLower().Substring(0, 6);
+            if (dynamicInputs == null)
+            {
+                dynamicInputs = new string[0];
+            }
+            string[] resizedInputs = new string[dynamicInputs.Length + 1];
+            //Array.Resize(ref dynamicInputs1, dynamicInputs1.Length + 1);
+            resizedInputs[dynamicInputs.Length] = GuidString;
+            ViewBag.dynamicInputs = resizedInputs;
+            return View();
+        }
     }
 }
