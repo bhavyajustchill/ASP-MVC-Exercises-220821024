@@ -71,24 +71,36 @@ namespace Bhavya_AllExercises.Controllers
             ViewBag.Length = Convert.ToInt32(lengthValue);
             return View("ExSix");
         }
-
-
-        string[] dynamicInputs = new string[0];
             
-    public ActionResult ExSeven()
+        public ActionResult ExSeven()
         {
-            dynamicInputs = ViewBag.dynamicInputs as string[];
-            Guid g = Guid.NewGuid();
-            string GuidString = g.ToString().ToLower().Substring(0, 6);
-            if (dynamicInputs == null)
-            {
-                dynamicInputs = new string[0];
-            }
-            string[] resizedInputs = new string[dynamicInputs.Length + 1];
-            //Array.Resize(ref dynamicInputs1, dynamicInputs1.Length + 1);
-            resizedInputs[dynamicInputs.Length] = GuidString;
-            ViewBag.dynamicInputs = resizedInputs;
+            //Guid g = Guid.NewGuid();
+            //string GuidString = g.ToString().ToLower().Substring(0, 6);
+            //if (dynamicInputs == null)
+            //{
+            //    dynamicInputs = new List<string>();
+            //}   
+            ViewBag.DynamicFieldCount = 1;
             return View();
         }
+
+        [HttpPost]
+        public ActionResult GenerateFields()
+        {
+            var dynamicFields = ViewBag.DynamicFieldCount;
+            ViewBag.Data = string.Join(",", dynamicFields ?? new string[] { });
+
+            if (dynamicFields != null)
+            {
+                ViewBag.DynamicFieldCount = dynamicFields.Length + 1; // Increment the field count
+            }
+            else
+            {
+                ViewBag.DynamicFieldCount = 1; // Set initial field count
+            }
+
+            return RedirectToAction("ExSeven");
+        }
+
     }
 }
